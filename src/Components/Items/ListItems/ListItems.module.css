@@ -1,5 +1,9 @@
 .ListItems {
-    margin: auto;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 95px;
+    display: flex;
+    flex-direction: column;
 }
 
 .NavButton {
@@ -26,11 +30,10 @@
     background: rgb(255, 255, 255);
     border-radius: 5px;
     flex-wrap: wrap;  
-    width: 900px;
+    width: calc(100% - 190px);
+    padding: 0 95px;
     height: 500px;
-    padding-left: 95px;
-    padding-right: 95px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .Container table { 
