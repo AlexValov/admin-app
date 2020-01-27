@@ -1,0 +1,136 @@
+.CardContainer {
+    display: flex;
+    padding-left: 95px;
+    padding-right: 95px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin: auto;
+    flex-wrap: wrap;  
+    align-content: flex-start;
+    width: 960px;
+    margin-left: 95px;
+    margin-right: 95px;
+       
+}
+
+.CardElement0 {
+    margin-top: 20px;
+    flex-basis: 950px;
+    padding-left: 15px;
+
+}
+
+.CardElement0 a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration-line: underline;
+    color: #2F80ED;
+}
+
+.CardElement1 {
+    padding-left: 15px;
+    margin-top: 48px;
+    flex-basis: 950px;
+}
+
+.CardElement2 {
+    padding-bottom: 0;
+    padding: 15px;
+    margin: 5px;
+    /* background: firebrick; */
+    border-radius: 3px;
+    flex-basis: 350px;
+
+}
+.CardElement2 img {
+    width: 350px;
+
+}
+
+.CardElement3 {
+    padding: 15px;
+    margin: 5px;
+    /* background: firebrick; */
+    border-radius: 3px;
+    flex-basis: 530px;
+}
+
+.CardElement3 p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #828282;
+}
+
+.CardElement3 span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.CardElement4 {
+    padding: 15px;
+    padding-top: 0;
+    margin: 5px;
+    /* background: firebrick; */
+    border-radius: 3px;
+    flex-basis: 350px;
+}
+
+.CardElement5 {
+    padding: 15px;
+    margin: 5px;
+    /* background: firebrick; */
+    border-radius: 3px;
+    flex-basis: 530px;
+    align-self: flex-end;
+}
+
+.OptionName {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-top: 24px;
+}
+
+.OptionValue {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 25px;
+    color: #828282;
+}
+.OptionValuePrice {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.CardElement5 button {
+    width: 160px;
+    height: 32px;
+    background: #FFB800;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    align-self: center;
+    border:none;
+}

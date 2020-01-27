@@ -1,0 +1,76 @@
+.RegContainer {
+    display: flex;
+    width: 350px;
+    height: 549px;
+    margin: 38px auto;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 20px rgba(40, 40, 40, 0.05);
+    border-radius: 10px;
+}
+
+.RegForm {
+    display: flex;
+    flex-direction: column;
+    flex:1 1 auto; 
+    padding:0 16px;
+}
+
+.RegForm span {
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 32px;
+
+}
+
+.RegForm input {
+    height: 32px;
+    left: 561px;
+    top: 403px;
+    color: lightgray;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-left: 16px;
+}
+
+.RegForm button {
+    width: 200px;
+    height: 32px;
+    background: #FFB800;
+    border-radius: 4px;
+    margin-top: 24px;
+
+    /* font-family: Roboto; */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    align-self: center;
+    border:none;
+}
+
+.RegForm label {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 8px;
+    margin-top: 16px;
+    color: #828282;
+}
+
+.RegForm a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-top: 24px;
+    text-align: center;
+    color: #0258FF;
+}

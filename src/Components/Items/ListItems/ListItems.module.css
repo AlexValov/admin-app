@@ -1,0 +1,91 @@
+.ListItems {
+    margin: auto;
+}
+
+.NavButton {
+    width: 255px;
+    height: 60px;
+    left: 165px;
+    top: 0px;
+    background: linear-gradient(180deg, #0258FF 0%, rgba(2, 88, 255, 0) 100%);
+    opacity: 0.1;
+}
+
+.NavButton a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    color: #0258FF;
+}
+
+.Container {
+    display: inline-flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    flex-wrap: wrap;  
+    width: 900px;
+    height: 500px;
+    padding-left: 95px;
+    padding-right: 95px;
+    margin: auto;
+}
+
+.Container table { 
+    width: 100%; /* Ширина таблицы */
+    border: 0px double rgb(255, 255, 255);
+    margin-top: 20px;
+   }
+
+.Container th {
+    text-align: left; /* Выравнивание по левому краю */
+    background: white; /* Цвет фона ячеек */
+    padding: 5px; /* Поля вокруг содержимого ячеек */
+    border: 0px solid rgb(255, 255, 255); 
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #828282;
+    opacity: 0.8;
+}
+
+.Container td { 
+    padding: 5px; /* Поля вокруг содержимого ячеек */
+    border: 0px solid rgb(255, 255, 255);
+   }
+   .Container table a { 
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration-line: none;
+    color: #0258FF;
+    opacity: 0.8;
+   }
+
+
+.Menu {
+    align-self: flex-end;
+    margin-top: 20px;
+}
+
+.Menu button {
+    width: 160px;
+    height: 32px;
+    background: #FFB800;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    align-self: center;
+    border:none;
+
+}
