@@ -1,0 +1,100 @@
+.AddItem {
+    margin: auto;
+    width: 960px;
+    /* height: 500px; */
+    padding: 0 95px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    flex-wrap: wrap;  
+}
+
+.ElementButtons {
+    align-self: flex-end;
+    margin-top: 24px;
+}
+
+.ReturnButton {
+    background: #FF0000;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    width: 160px;
+    height: 32px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    border:none;
+    margin-right: 30px;
+}
+.SaveButton {
+    background: #34C15C;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    width: 160px;
+    height: 32px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    border:none;
+}
+
+.AddItemForm span {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    opacity: 0.8;
+}
+
+.AddItemForm label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    margin-top: 16px;
+    color: #000000;
+}
+
+.AddItemForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 41px;
+}
+
+.AddItemForm input {
+    width: 255px;
+    height: 32px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #828282;
+    opacity: 0.8;
+    padding-left: 8px;
+}
+
+.AddItemForm textarea {
+    max-width: 300px;  
+    max-height: 300px;   
+    min-width: 532px;  
+    min-height: 112px;    
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-left: 8px;
+    margin-bottom: 15px;
+
+}
+
+
