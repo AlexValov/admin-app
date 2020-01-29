@@ -3,17 +3,17 @@ import './App.css';
 // import ItemCard from './Components/Items/ItemCard/ItemCard'
 // import Login from './Components/Auth/Login/Login';
 // import ListItems from './Components/Items/ListItems/ListItems';
-// import Registration from './Components/Auth/Registration/Registration';
-import AddItem from './Components/Items/AddItem/AddItem'
+import Signup from './Components/Auth/Signup/Signup';
+// import AddItem from './Components/Items/AddItem/AddItem'
 
 function App() {
   return (
     <main className="layout">
-      {/* <Registration /> */}
+      <Signup />
       {/* <Login/> */}
       {/* <ListItems /> */}
       {/* <ItemCard /> */}
-      <AddItem />
+      {/* <AddItem /> */}
     </main>
   );
 }
