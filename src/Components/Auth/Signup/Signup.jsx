@@ -1,9 +1,9 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import styles from './Signup.module.css';
+import styles from './SignUp.module.css';
 
-const Signup = () => {
+const SignUp = () => {
 
     return (
         <div className={styles.RegContainer}>
@@ -58,4 +58,4 @@ const Signup = () => {
 };
 
 
-export default Signup;
+export default SignUp;

@@ -2,10 +2,11 @@ import React from 'react';
 import { Provider } from 'react-redux'
 import { store } from './redux'
 import './App.css';
-// import ItemCard from './Components/Items/ItemCard/ItemCard'
-// import Login from './Components/Auth/Login/Login';
+import {Route} from 'react-router-dom'
+import ItemCard from './Components/Items/ItemCard/ItemCard'
+import Login from './Components/Auth/Login/Login';
 import ListItems from './Components/Items/ListItems/ListItems';
-// import Signup from './Components/Auth/Signup/Signup';
+import SignUp from './Components/Auth/SignUp/SignUp';
 import AddItem from './Components/Items/AddItem/AddItem'
 
 function App() {
@@ -17,35 +18,42 @@ function App() {
   // ]
 
 
-    // используем useState хук
+  // используем useState хук
   // в качестве начальных данных, передаем usersData
   // в users будем хранить пользователей, как будто это state.users
   // setUsers - это функция, как будто this.setState({ users: ... })
   // const [cars, setCars] = useState(carsData)
 
 
-    // функция добавления пользователя
-    // const addCar = car => {
-    //   // создаем id значением на 1 больше (автоинкремент)
-    //   car.id = cars.length + 1
-    //   // вызываем setUsers определенную выше в хуке useState
-    //   // передаем туда все, что было в users + новый элемент user
+  // функция добавления пользователя
+  // const addCar = car => {
+  //   // создаем id значением на 1 больше (автоинкремент)
+  //   car.id = cars.length + 1
+  //   // вызываем setUsers определенную выше в хуке useState
+  //   // передаем туда все, что было в users + новый элемент user
 
-    //   setCars([ ...cars, car ])
-    // }
+  //   setCars([ ...cars, car ])
+  // }
 
 
 
   return (
     <main className="layout">
       <Provider store={store}>
-      {/* <Registration /> */}
-      {/* <Login/> */}
-      <ListItems/>
-      {/* <ListItems cars={cars} /> */}
-      {/* <ItemCard /> */}
-      {/* <AddItem addCar={addCar}/> */}
-      <AddItem/>
+        <Route path='/' exact render={()=><h1>Home page</h1>} />
+
+        {/* <Registration /> */}
+        {/* <Login/> */}
+        <Route path='/login' component={Login} />
+        <Route path='/sign-up' component={SignUp} />
+        <Route path='/item-list' component={ListItems} />
+      
+        {/* <ListItems cars={cars} /> */}
+        <Route path='/item-card/:id' component={ItemCard} />
+        {/* <ItemCard /> */}
+        {/* <AddItem addCar={addCar}/> */} 
+        <Route path='/add-item' component={AddItem} />
+        
       </Provider>
     </main>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ListItems.module.css'
+import {NavLink} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteCarAction } from '../../../redux'
 
@@ -15,7 +16,7 @@ const ListItems = () => {
             </header>
             <div className={styles.Container}>
                 <div className={styles.Menu}>
-                    <button>Добавить товар</button>
+                    <button><NavLink to='/add-item'>Добавить товар</NavLink></button>
                 </div>
 
                 <table border="1">
