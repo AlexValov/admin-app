@@ -6,6 +6,7 @@ import { deleteCarAction } from '../../../redux'
 
 const ListItems = () => {
     const cars = useSelector((state)=> state.carsData)
+    console.log(cars)
  
     const dispatch = useDispatch()
         return (
@@ -33,7 +34,7 @@ const ListItems = () => {
                             < tr key={car.id} >
                                 <td><a href='/'>{car.name}</a></td>
                                 <td>{car.price}</td>
-                                <td>10.12.2019</td>
+                                <td><img src={car.image} /></td>
                                 <td>
                                     <a href='/'>Ред.</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <span style= {{cursor: 'pointer'}} onClick={() => dispatch(deleteCarAction(car.id))}  >Удалить</span>

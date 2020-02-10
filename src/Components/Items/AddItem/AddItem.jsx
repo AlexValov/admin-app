@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './AddItem.module.css';
-import PictureInput from './PictureInput'
+import FileUpload from './FileUpload'
 import { addCarAction } from '../../../redux'
 import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom';
@@ -48,7 +48,7 @@ return (
       <Field name="price" type="number" placeholder="113 000"/>
       <ErrorMessage name="price" />
       <label htmlFor="image">Изображение</label>
-      <Field name="image"  component={PictureInput}/>
+      <Field name="image"  component={FileUpload}/>
       <label htmlFor="description">Описание</label>
       <Field name="description"  as="textarea" type="description" placeholder="Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют определения и уточнения существенных финансовых и административных условий. Разнообразный и богатый опыт консультация с широким активом способствует подготовки и реализации" />
       <ErrorMessage name="description" />

@@ -40,20 +40,12 @@ function App() {
   return (
     <main className="layout">
       <Provider store={store}>
-        <Route path='/' exact render={()=><h1>Home page</h1>} />
-
-        {/* <Registration /> */}
-        {/* <Login/> */}
+        <Route path='/' exact render={()=> <h1>Home page</h1>} />
         <Route path='/login' component={Login} />
         <Route path='/sign-up' component={SignUp} />
         <Route path='/item-list' component={ListItems} />
-      
-        {/* <ListItems cars={cars} /> */}
         <Route path='/item-card/:id' component={ItemCard} />
-        {/* <ItemCard /> */}
-        {/* <AddItem addCar={addCar}/> */} 
         <Route path='/add-item' component={AddItem} />
-        
       </Provider>
     </main>
   );
