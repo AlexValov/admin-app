@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './SignUp.module.css';
+import axios from 'axios';
 
 const SignUp = () => {
-
+    const [returnSecureToken] = useState(true);
     return (
         <div className={styles.RegContainer}>
             <Formik
-                initialValues={{ firstName: '', lastName: '', email: '', password1: '', password2: '' }}
+                initialValues={{ firstName: '', lastName: '', email: '', password: '', passwordConfirm: '' }}
+                // initialValues={{ email: '', password: ''}}
                 validationSchema={Yup.object({
                     firstName: Yup.string()
                         .max(15, 'не более 15 символов')
@@ -19,20 +21,29 @@ const SignUp = () => {
                     email: Yup.string()
                         .email('Введите правильный email')
                         .required('Обязательное поле'),
-                        password1: Yup.string()
-                        .required('Обязательное поле'),
-                        password2: Yup.string()
-                        .required('Обязательное поле'),
+                    password: Yup.string().required('Password is required'),
+                    passwordConfirm: Yup.string()
+                        .oneOf([Yup.ref('password'), null])
+                        .required('Password confirm is required')
                 })}
-                onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                    }, 400);
+
+
+                onSubmit={async (values, { setSubmitting, resetForm }) => {
+
+                    try {
+                        const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyANHxXfZwHfMqKI21Jufqk21CEfEoQwYZs', values, returnSecureToken)
+                        console.log(response.data)
+                    }
+                    catch (e) {
+                        console.log(e)
+                    }
+
+                    setSubmitting(false)
+                    resetForm(values)
                 }}
             >
 
-                <Form form className={styles.RegForm}>
+                <Form className={styles.RegForm}>
                     <span>Регистрация</span>
                     <label htmlFor="firstName">Имя</label>
                     <Field name="firstName" type="text" placeholder="Введите имя" />
@@ -43,12 +54,12 @@ const SignUp = () => {
                     <label htmlFor="email">E-mail</label>
                     <Field name="email" type="email" placeholder="Введите Email" />
                     <ErrorMessage name="email" />
-                    <label htmlFor="password1">Пароль</label>
-                    <Field name="password1" type="password" placeholder="Введите пароль" />
-                    <ErrorMessage name="password1" />
-                    <label htmlFor="password2">Повторите пароль</label>
-                    <Field name="password2" type="password" placeholder="Введите пароль" />
-                    <ErrorMessage name="password2" />
+                    <label htmlFor="password">Пароль</label>
+                    <Field name="password" type="password" placeholder="Введите пароль" />
+                    <ErrorMessage name="password" />
+                    <label htmlFor="passwordConfirm">Повторите пароль</label>
+                    <Field name="passwordConfirm" type="password" placeholder="Введите пароль" />
+                    <ErrorMessage name="passwordConfirm" />
                     <button type="submit">Зарегистрироваться</button>
                     <a href='/'>Вернуться</a>
                 </Form>
