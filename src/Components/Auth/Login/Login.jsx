@@ -19,7 +19,7 @@ const Login = () => {
 
                 onSubmit={async (values, { setSubmitting, resetForm }) => {
                     try {
-                        const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyANHxXfZwHfMqKI21Jufqk21CEfEoQwYZs', values, returnSecureToken)
+                        await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyANHxXfZwHfMqKI21Jufqk21CEfEoQwYZs', values, returnSecureToken)
                     }
                     catch (e) {
                         console.log(e)

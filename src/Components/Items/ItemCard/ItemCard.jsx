@@ -22,7 +22,7 @@ const ItemCard = (props) => {
             }
         };
         fetchData();
-    }, []);
+    }, [props.match.params.id]);
 
     return (
         <Fragment>

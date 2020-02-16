@@ -1,28 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import axios from '../../../axios/axios-link';
+import React, { useEffect } from 'react';
 import styles from './ListItems.module.css';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteCarAction } from '../../../redux';
 import Loader from '../../UI/Loader/Loader';
+import {fetchData} from '../../../Redux/Actions/carAction'
 
 
 const ListItems = () => {
-    // const cars = useSelector((state)=> state.carsData)
+
+    const {cars, loading} = useSelector((state)=> state.cars)
+
     const dispatch = useDispatch()
 
-    const [cars, setCars] = useState([]);
-    const [loading, setLoading] = useState(true)
-
     useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios.get('/cars.json');
-            setCars(result.data);
-            setLoading(false);
-            
-        };
-        fetchData();
-    }, []);
+        dispatch(fetchData())
+     }, [dispatch]);
+ 
+ 
 
     return (
         <div className={styles.ListItems}>
@@ -34,7 +29,10 @@ const ListItems = () => {
                 <div className={styles.Menu}>
                     <button><NavLink to='/add-item'>Добавить товар</NavLink></button>
                 </div>
-
+                {
+                        loading && cars.lenght !==20
+                        ? <Loader />
+                        : 
                 <table border="1">
                     <thead>
                         <tr>
@@ -44,15 +42,13 @@ const ListItems = () => {
                             <th>Управление</th>
                         </tr>
                     </thead>
-                    {
-                        loading ? (<Loader />)
-                        : (
+
                     <tbody>
                         {Object.keys(cars).map(car => (
                             < tr key={cars[car].name} >
                                 <td><NavLink to={`/item-card/${car}/`}>{cars[car].name}</NavLink></td>
                                 <td>{cars[car].price}</td>
-                                <td><img src={car.image} /></td>
+                                <td> img</td>
                                 <td>
                                     <a href='/'>Ред.</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <span style={{ cursor: 'pointer' }} onClick={() => dispatch(deleteCarAction(car.id))}  >Удалить</span>
@@ -60,9 +56,9 @@ const ListItems = () => {
                             </tr>
                         ))}
                     </tbody>
-                    )}
+                   
                 </table>
-                
+                 }
             </div>
         </div >
     )
