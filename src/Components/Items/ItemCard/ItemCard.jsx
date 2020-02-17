@@ -1,33 +1,30 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, Fragment } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import axios from '../../../axios/axios-link';
 import styles from './ItemCard.module.css';
 import { Link } from 'react-router-dom';
-import Loader from '../../UI/Loader/Loader'
+import Loader from '../../UI/Loader/Loader';
+import {fetchDataById} from '../../../Redux/Actions/carAction'
 
 
 const ItemCard = (props) => {
 
-    const [car, setCar] = useState([]);
-    const [loading, setLoading] = useState(true)
+    const {car, loading} = useSelector((state)=> state.cars)
+    const {name, description, price} = car
+    
+    
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const result = await axios.get(`/cars/${props.match.params.id}.json`);
-                setCar(result.data);
-                setLoading(false);
-            }
-            catch (e) {
-                console.log(e)
-            }
-        };
-        fetchData();
-    }, [props.match.params.id]);
+        dispatch(fetchDataById(props.match.params.id))
+     }, [dispatch]);
+
 
     return (
         <Fragment>
             {
-                loading ? (<Loader />)
+                loading && !car 
+                ? <Loader />
                     : (
                         <div className={styles.CardContainer}>
                             <div className={styles.CardElement0}>
@@ -43,7 +40,7 @@ const ItemCard = (props) => {
                             </div>
 
                             <div className={styles.CardElement3}>
-                                <span>{car.name}</span>
+                                <span>{name}</span>
                                 <p>{car.description}</p>
                             </div>
 
