@@ -5,7 +5,7 @@ const initialState = {
     cars: [],
     loading: false,
     error: null,
-    car: null
+    car: {}
 }
 
 export default function carReducer(state = initialState, action) {

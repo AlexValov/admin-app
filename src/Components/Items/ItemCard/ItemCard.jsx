@@ -1,6 +1,5 @@
 import React, { useEffect, Fragment } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import axios from '../../../axios/axios-link';
 import styles from './ItemCard.module.css';
 import { Link } from 'react-router-dom';
 import Loader from '../../UI/Loader/Loader';
@@ -10,9 +9,7 @@ import {fetchDataById} from '../../../Redux/Actions/carAction'
 const ItemCard = (props) => {
 
     const {car, loading} = useSelector((state)=> state.cars)
-    const {name, description, price} = car
-    
-    
+      
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -40,7 +37,7 @@ const ItemCard = (props) => {
                             </div>
 
                             <div className={styles.CardElement3}>
-                                <span>{name}</span>
+                                <span>{car.name}</span>
                                 <p>{car.description}</p>
                             </div>
 

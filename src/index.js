@@ -25,9 +25,9 @@ const store = createStore(
 )
 
 // подпиались на изменения в консоли
-// store.subscribe(()=> {
-//     console.log('Subscribe', store.getState())
-// })
+store.subscribe(()=> {
+    console.log('Subscribe', store.getState())
+})
 
 const app = (
     <Provider store={store}>
